@@ -1,0 +1,88 @@
+.container {
+    width: 100%;
+    padding: 1rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #0796EF;
+}
+
+.title {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.addIcon {
+    color: #0796EF;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.addIcon:hover {
+    transform: scale(1.1);
+}
+
+.menuItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menuItem {
+    background-color: rgba(7, 150, 239, 0.1);
+    border-left: 3px solid #0796EF;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.menuItem:hover {
+    background-color: rgba(7, 150, 239, 0.2);
+}
+
+.nameAndPrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.itemName {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.itemPrice {
+    color: #0796EF;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.itemDescription {
+    color: #a0aec0;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.itemCategory {
+    display: inline-block;
+    background-color: rgba(7, 150, 239, 0.2);
+    color: #0796EF;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}

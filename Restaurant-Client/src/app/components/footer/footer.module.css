@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+.box{
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 375px;
+    height: 134px;
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.head{
+    color: #0796EF;
+    font-family: Oswald;
+}
+
+.text{
+font-family: Oswald;
+color:  #857878;
+font-size: 16px;
+font-weight: 500;
+line-height: 23.71px;
+letter-spacing: 0.03em;
+
+}
+.content
+{
+    font-family: Oswald;
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 51.87px;
+    letter-spacing: 0.03em;
+}
+.footer{
+    display: flex;
+    background-color: rgb(46, 42, 42);
+    justify-content: space-between;
+    padding: 10px;
+}
+.footerContent
+{
+    font-family: Lato;
+font-size: 12px;
+font-weight: 600;
+line-height: 16.8px;
+letter-spacing: 0.03em;
+color: #857878;
+}
+@media (max-width: 768px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+}

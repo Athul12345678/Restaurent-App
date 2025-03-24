@@ -1,0 +1,153 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.inputContainer {
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.inputContainer h3 {
+  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.inputContainer input,
+.inputContainer select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.inputContainer button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.inputContainer button:hover {
+  background-color: #45a049;
+}
+
+.inputContainer button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* New Menu Items Preview Styles */
+.menuItemsPreview {
+  background-color: black;
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.menuItemsPreview h3 {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.menuItemRow {
+  position: relative;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.menuItemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.menuItemName {
+  color: white;
+  font-weight: bold;
+}
+
+.menuItemDots {
+  flex-grow: 1;
+  border-bottom: 1px dotted white;
+  margin: 0 10px;
+}
+
+.menuItemPrice {
+  color: white;
+  font-weight: bold;
+}
+
+.menuItemDescription {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.removeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.error {
+  color: #ff6b6b;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.submitButton {
+  background-color: #2196F3 !important;
+  margin-top: 20px !important;
+}
+
+.submitButton:hover {
+  background-color: #0b7dda !important;
+}

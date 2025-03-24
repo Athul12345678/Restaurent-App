@@ -31,7 +31,6 @@ const AddMenu = ({ state, refreshMenus }: ModalProps) => {
     });
 
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState("");
 
     const handleMenuChange = (e: ChangeEvent<HTMLInputElement>) => {
         setMenuRecord({ ...menuRecord, [e.target.name]: e.target.value });
@@ -42,11 +41,6 @@ const AddMenu = ({ state, refreshMenus }: ModalProps) => {
     };
 
     const addMenuItem = () => {
-        if (!currentItem.name || !currentItem.description || !currentItem.price) {
-            setError("Please fill all item fields");
-            return;
-        }
-        
         setMenuItems([...menuItems, currentItem]);
         setCurrentItem({
             name: "",
@@ -54,7 +48,6 @@ const AddMenu = ({ state, refreshMenus }: ModalProps) => {
             price: "",
             category: "Brunch"
         });
-        setError("");
     };
 
     const removeMenuItem = (index: number) => {
@@ -62,28 +55,11 @@ const AddMenu = ({ state, refreshMenus }: ModalProps) => {
     };
 
     const handleSubmit = async () => {
-        if (!menuRecord.title || !menuRecord.description) {
-            setError("Please fill in menu title and description");
-            return;
-        }
-
-        if (menuItems.length === 0) {
-            setError("Please add at least one menu item");
-            return;
-        }
-
         setLoading(true);
-        setError("");
 
         try {
             // 1. Create the menu
             const menuResponse = await axios.post("http://localhost:5000/api/menus", menuRecord);
-            
-            if (!menuResponse.data.data?.id) {
-                throw new Error("Menu ID not received from server");
-            }
-
-            console.log("Menu Created:", menuResponse.data);
 
             // 2. Add all items for this menu
             const itemPromises = menuItems.map(item => 
@@ -95,18 +71,9 @@ const AddMenu = ({ state, refreshMenus }: ModalProps) => {
             );
 
             await Promise.all(itemPromises);
-            console.log("Menu Items Added:", menuItems);
             
             refreshMenus();
             state(false);
-            
-        } catch (err) {
-            console.error("Submission error:", err);
-            setError(
-                err.response?.data?.message || 
-                err.message || 
-                "Failed to save menu and items"
-            );
         } finally {
             setLoading(false);
         }
@@ -204,8 +171,6 @@ const AddMenu = ({ state, refreshMenus }: ModalProps) => {
                         ))}
                     </div>
                 )}
-
-                {error && <div className={styles.error}>{error}</div>}
 
                 <button 
                     onClick={handleSubmit}
